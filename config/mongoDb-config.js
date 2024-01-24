@@ -11,7 +11,6 @@ async function connect() {
     family: 4, // Use IPv4, skip trying IPv6
   };
   mongoose.connect(
-    // "mongodb+srv://rahullodhipanna:99pSKR7b5rhpG760@cluster0.jqv0plx.mongodb.net/?retryWrites=true&w=majority/auth_app",
     `mongodb+srv://${process.env.MONGO_USER ?? ""}:${
       process.env.MONGO_PASSWORD ?? ""
     }@cluster0.hdjgh3x.mongodb.net/`,
