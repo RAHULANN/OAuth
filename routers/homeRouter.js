@@ -2,7 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const passport = require("passport");
 const loginPageController = require("../controller/loginPageCotroller");
-
+const signUpPageController = require("../controller/signUpPageController");
+const homePageController = require("../controller/homePageController");
 const checkUnauthenticated = function (req, res, next) {
   if (req.isAuthenticated()) {
     // If the user is authenticated, redirect to another page (e.g., home page)
@@ -20,7 +21,7 @@ const checkAuthenticated = function (req, res, next) {
   next();
 };
 //routes
-
+router.route("").get(checkAuthenticated, homePageController.homePageView);
 router
   .route("/login")
   .get(checkUnauthenticated, loginPageController.viewLoginPage)
@@ -31,6 +32,24 @@ router
       failureFlash: true,
     })(req, res, next);
   }, loginPageController.loginHandle);
+router
+  .route("/signUp")
+  .get(checkUnauthenticated, signUpPageController.viewSignUpPage)
+  .post(signUpPageController.signUp);
+router
+  .route("/resetPassword")
+  .get(checkAuthenticated, homePageController.resetPasswordView)
+  .post(checkAuthenticated, homePageController.resetPassword);
+
+router.post("/logout", function (req, res, next) {
+  req.logout(function (err) {
+    if (err) {
+      return next(err̥);
+    }
+    req.flash("success", "logout Successfully!");
+    res.redirect("/login");
+  });
+});
 
 router.get(
   "/auth/google",
