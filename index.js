@@ -10,17 +10,17 @@ const passport = require("passport");
 const MongoStore = require("connect-mongo");
 
 const port = process.env.PORT || 8000;
-
+const homeRouter = require("./routers/homeRouter");
 const flash = require("connect-flash");
 
 const cors = require("cors");
-
+app.use(express.static(path.join(__dirname, "assets")));
 app.use(expressLayout);
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 app.use(express.urlencoded());
 app.set("view engine", "ejs");
-
+app.set("views", path.join(__dirname, "view"));
 app.use(cors());
 //creating session of user
 app.use(
@@ -42,8 +42,11 @@ app.use(
     }),
   })
 );
-
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
+
+app.use("", homeRouter);
 
 connect()
   .then(() => {
