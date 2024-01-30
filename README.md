@@ -21,22 +21,24 @@ Users can create an account by providing their email and password.
 
 HTML Page:
 
-!
+![image](https://github.com/RAHULANN/OAuth/assets/95866809/159b513f-1a46-432b-b8c7-f068785357b4)
+
 
 # Sign In
 
 Users can log in using their email and password. After successful sign-in, they are redirected to a blank home page with options to sign out and reset their password.
 
-!
+![image](https://github.com/RAHULANN/OAuth/assets/95866809/42bcf0ef-30f8-411b-821b-2eb76cd7b466)
+
+
+# Home
+Here user have there details name email some other options as well.
+![image](https://github.com/RAHULANN/OAuth/assets/95866809/77905fec-3d67-4655-b05e-78deee1df9a0)
 
 # Reset Password
 
 After signing in, users have the option to reset their password.
 
-!
+![image](https://github.com/RAHULANN/OAuth/assets/95866809/5ea16116-3368-44a3-a342-af98f5f31689)
 
-# Home Page
 
-Users home page Screen.
-
-!
