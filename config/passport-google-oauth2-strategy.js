@@ -14,7 +14,7 @@ passport.use(
       clientSecret: process.env.CLIENTSCRET, // e.g. asdfghjkkadhajsghjk.apps.googleusercontent.com
 
       // e.g. _ASDFA%KFJWIASDFASD#FAD-
-      callbackURL: "http://localhost:4000/google/callback",
+      callbackURL: "https://oauth-tdbd.onrender.com/google/callback",
     },
 
     async function (accessToken, refreshToken, profile, done) {
