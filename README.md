@@ -14,6 +14,14 @@ This is a user authentication system that allows users to sign up, sign in, sign
    npm install  //install dependecies
    nodemon index.js   //start the server
    ```
+   ```
+   ENV config
+   PORT = 4000
+   DEBUG = false
+   MONGO_USER=""
+   MONGO_PASSWORD=""
+   CLIENTID= ""
+   CLIENTSCRET=""
 
 # Sign Up
 
